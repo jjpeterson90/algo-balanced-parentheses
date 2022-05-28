@@ -1,5 +1,3 @@
-import re
-
 def balance_parens(str):
     tracker = [[],[]] # tracker[0] logs parens, tracker[1] logs indexes of open parens
     str = list(char for char in str)
@@ -20,12 +18,3 @@ def balance_parens(str):
     for char in str:
         result += char
     return result
-            
-# () () ) () )   >>   () () ()
-# print(balance_parens("abc(d)e(fgh))(i)j)k"))# == "abc(d)e(fgh)(i)jk")
-
-# # ( () () () (   >>   () () ()
-# print(balance_parens("abc((d)e(fgh)(i)j(k"))# == "abc(d)e(fgh)(i)jk")
-
-# # () ( ( () ) ) ) () )   >>   () ( ( () ) ) ()
-# print(balance_parens("abc(d)(ef(g(h))ij)k)lm()o)p"))# == "abc(d)(ef(g(h))ij)klm()op")
